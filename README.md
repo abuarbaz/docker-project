@@ -25,4 +25,15 @@ docker exec <container-id> cat /data.txt
   
 docker run -it ubuntu ls /
 docker rm -f "To remove containers
+docker network create todo-app
 
+docker volume create todo-db
+docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+
+docker volume inspect
+
+docker logs -f <container-id>
+
+sudo docker-compose up -d
+
+sudo docker-compose down
