@@ -1,21 +1,21 @@
-name: Rotate Storage KeyS
+name: Rotate Storage
 
 on:
   workflow_dispatch:
-    inputs:
-      target_env:
-        description: Target Azure Environment to deploy to.
+  inputs:
+    target_env:
+        description: "Target Azure Environment to deploy to."
         required: true
-        type: choice
-        options:
+        type: choice # This ensures you get a dropdown
+        options: # Options must be provided for the 'choice' type
           - dev
           - staging
           - prod
         default: dev
-      employee_Id:
-        description: '8 Digit employee ID (required only for prod)'
+    employee_Id:
+        description: "8 Digit employee ID (required only for prod)"
         required: true
-        default: 'NA'
+        default: "NA"
 
 
 jobs:
