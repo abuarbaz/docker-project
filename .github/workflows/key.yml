@@ -6,11 +6,11 @@ on:
       target_env:
         description: "Target Azure Environment to deploy to."
         required: true
-        type: choice # This ensures you get a dropdown
-        options: # Options must be provided for the 'choice' type
+        type: choice
+        options: 
           - dev
-          - staging
-          - prod
+          - qa
+          - prod  # You can add as many options as you need
         default: dev
       employee_Id:
         description: "8 Digit employee ID (required only for prod)"
