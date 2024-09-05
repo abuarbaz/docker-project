@@ -18,6 +18,7 @@ on:
         default: "NA"
 permissions:
   contents: read
+  actions: write
 
 jobs:
   RotateStorageKeys:
