@@ -1,21 +1,21 @@
-name: Rotate Storage
+name: Rotate Storage KeyS
 
 on:
   workflow_dispatch:
-  inputs:
-      description: "Target Azure Environment to deploy to."
-      required: true
-      type: choice # This ensures you get a dropdown
-      options: # Options must be provided for the 'choice' type
-        - dev
-        - staging
-        - prod
-      default: dev
+    inputs:
+      target_env:
+        description: "Target Azure Environment to deploy to."
+        required: true
+        type: choice # This ensures you get a dropdown
+        options: # Options must be provided for the 'choice' type
+          - dev
+          - staging
+          - prod
+        default: dev
       employee_Id:
         description: "8 Digit employee ID (required only for prod)"
         required: true
         default: "NA"
-
 
 jobs:
   RotateStorageKeys:
@@ -30,7 +30,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
 
       - name: Check Storage Account Keys Age and Rotate if necessary
         id: rotate_keys
