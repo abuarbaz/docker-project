@@ -1,4 +1,4 @@
-name: Rotate Storage KeyS
+name: Rotate Storage Keys
 
 on:
   workflow_dispatch:
