@@ -6,10 +6,14 @@ on:
       target_env:
         description: Target Azure Environment to deploy to.
         required: true
-        type: string 
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
         default: dev
       employee_Id:
-        description: '8 Digit employee ID(required only for prod)'
+        description: '8 Digit employee ID (required only for prod)'
         required: true
         default: 'NA'
 
