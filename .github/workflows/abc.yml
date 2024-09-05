@@ -17,8 +17,8 @@ on:
         required: true
         default: "NA"
 permissions:
-  contents: read
-  actions: write
+  contents: read  # Required for reading repository contents
+  actions: write  # Required for manually triggering workflows
 
 jobs:
   RotateStorageKeys:
