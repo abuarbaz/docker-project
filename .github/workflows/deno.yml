@@ -25,7 +25,7 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
-- name: Check Storage Account Keys Age and Rotate if necessary
+      - name: Check Storage Account Keys Age and Rotate if necessary
         id: rotate_keys
         run: |
           # Set variables
