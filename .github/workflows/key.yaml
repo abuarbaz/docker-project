@@ -10,7 +10,7 @@ on:
         - dev
         - staging
         - prod
-          default: dev
+      default: dev
       employee_Id:
         description: "8 Digit employee ID (required only for prod)"
         required: true
