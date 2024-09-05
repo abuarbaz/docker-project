@@ -1,5 +1,3 @@
-name: Rotate
-
 on:
   workflow_dispatch:
     inputs:
@@ -16,26 +14,3 @@ on:
         description: "8 Digit employee ID (required only for prod)"
         required: true
         default: "NA"
-
-permissions:
-  contents: read
-  actions: write  # Make sure this is set correctly
-
-jobs:
-  RotateStorageKeys:
-    name: Rotate Storage Account Keys if older than 300 days
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Azure CLI Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Check Storage Account Keys Age and Rotate if necessary
-        id: rotate_keys
-        run: |
-          # Your script here
